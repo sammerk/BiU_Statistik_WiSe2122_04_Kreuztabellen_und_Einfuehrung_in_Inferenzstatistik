@@ -1,0 +1,26 @@
+Question
+========
+
+Der folgende Ausschnitt einer (abgeänderten) Pressemitteilung, bezieht sich auf eine reale Studie, die untersuchte, inwiefern sich bei Neuntklässlerinnen und Neuntklässlern die Wertschätzung des Faches Mathematik durch eine Präsentation von Interviews steigern lässt. Dazu wurde zunächst bei einer repräsentativen Stichprobe von Schülerinnen und Schülern die Wertschätzung des Faches Mathematik per Fragebogen erfasst und ihnen dann Interviewausschnitte präsentiert, in denen Berufstätige aussagen, dass Mathematik eine große Bedeutsamkeit für ihre Tätigkeit hat. Anschließend wurde die Wertschätzung des Faches Mathematik nochmals erfasst. _Nach der Präsentation der Interviews zeigten 75% der Schülerinnen und Schüler eine Wertschätzung über dem Durchschnitt der Wertschätzung vor der Präsentation._
+
+Was denken Sie? Soll der Ausschnitt _»zeigten 75% der Schülerinnen und Schüler eine Wertschätzung über dem Durchschnitt der Wertschätzung vor der Präsentation«_ beschreiben...
+
+Answerlist
+----------
+* ... wie sicher es ist, dass der Unterschied auch tatsächlich existiert oder 
+* wie groß der Unterschied ist?
+
+
+Solution
+========
+Answerlist
+----------
+* False
+* True
+
+Meta-information
+================
+exname: Unterscheidung_Inf_Effsize_01
+extype: schoice
+exsolution: 01
+exshuffle: TRUE

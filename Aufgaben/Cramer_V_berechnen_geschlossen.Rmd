@@ -1,0 +1,56 @@
+
+```{r, Datengenese, echo = FALSE, message=FALSE}
+library(tidyverse)
+library("DescTools")
+Form_erfahrenen_Mobbings <- sample(c("Stalking", "Grooming", "keines"), 
+                                   1000, replace = T, 
+                                   prob = c(.5, .1, .05)/
+                                     sum(c(.5, .1, .05)))
+
+data <- tibble(Form_erfahrenen_Mobbings = Form_erfahrenen_Mobbings,
+               Geschlecht = "m")
+
+for (i in 1:nrow(data)){
+  data$Geschlecht[i] <-  ifelse(data$Form_erfahrenen_Mobbings[i] == "keines",
+                                sample(c("m", "w"), 1, prob = c(0.7, 0.3)),
+                                sample(c("m", "w"), 1, prob = c(0.45, 0.55)))
+}
+
+
+
+write.csv(data, "data2.csv", row.names = FALSE, quote = FALSE)
+
+```
+
+Question
+========
+
+Eine Schulpsychologin fragt sich, ob es geschlechtsspezifische Formen des Cyberbullyings/-mobbings an ihrer Schule gibt (um planen zu können ob sie eine Interventionsmaßnahme ko- oder monoedukativ konzipieren soll).
+Aus einer Befragung der Schüler\*innen ihrer Schule erhält sie folgende Daten:
+
+```{r, echo = F}
+table(data$Geschlecht, data$Form_erfahrenen_Mobbings)
+```
+
+Anhand dieser Daten berechnet Sie Cramer's V als Assoziationsmaß der beiden nominalen Variablen `Geschlecht` und `Form_erfahrenen_Mobbings` Welches Ergebnis wird Sie erhalten?
+
+Answerlist
+----------
+* 0
+* -1
+* 5.2
+* 1
+* -3.1
+* `r round(CramerV(data$Form_erfahrenen_Mobbings, data$Geschlecht), digits = 2)`
+
+Solution
+========
+Carmér's V hat einen Wertebereich von 0 bis 1. 0 hieße keinerlei Zusammenhang, 1 hieße perfekter Zusammenhang. Beides ist nicht in der Tabelle zu sehen. Also muss es `r round(CramerV(data$Form_erfahrenen_Mobbings, data$Geschlecht), digits = 2)` sein. 
+
+
+Meta-information
+================
+extype: schoice
+exsolution: 000001
+exname: Cramer's V berechnen geschlossen
+extol: 0.1

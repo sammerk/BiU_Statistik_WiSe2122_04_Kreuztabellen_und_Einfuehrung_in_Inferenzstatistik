@@ -1,0 +1,28 @@
+Question
+========
+Eine Forscherin untersucht inwiefern Mädchen und Jungs unterschiedlich häufig »soziale vs. eigennützige Aufgaben« von ihren Lehrerinnen und Lehrern aufgetragen bekommen. 
+Sie kommt dabei auf die folgende Kreuztabelle:
+```{r, echo = F}
+Geschl <- c(rep("Jungs", 95), rep("Mädchen", 105))
+Aufgabe <- c(rep("eigennützlich", 60), rep("sozial", 35), rep("eigennützlich", 40), rep("sozial", 65))
+table(Geschl, Aufgabe)
+```
+Eine statistische Auswertung ergibt ein Cramér's V von `r DescTools::CramerV(Geschl, Aufgabe) %>% round(., 2)` sowie einen p-Wert für die Nullhypothese $H_0$: »Jungs und Mädchen bekommen die verschiedenen Aufgaben zu gleichen Anteilen« von `r chisq.test(table(Geschl, Aufgabe))$p.value %>% round(., 3)`.
+
+Welche der folgenden Interpretationen sind richtig?
+
+Answerlist
+----------
+* Die Daten (oder extremer gegen $H_0$ sprechende Daten) sind unwahrscheinlich (<.05) angenommen $H_0$ ist wahr.
+* Das vorliegende Cramér's V zeigt an, dass die Ergebnisse mit großer Sicherheit von der Stichprobe auf eine Population verallgemeinert werden können.
+* Das Ergebnis ist "signifikant".
+* $H_0$ ist wahr.
+* $H_0$ ist falsch.
+
+
+Meta-information
+================
+exname: Interpretation_V_und_Instat_01 
+extype: mchoice
+exsolution: 10100
+exshuffle: TRUE

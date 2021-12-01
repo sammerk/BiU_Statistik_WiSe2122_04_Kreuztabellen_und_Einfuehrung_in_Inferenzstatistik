@@ -1,0 +1,33 @@
+Question
+========
+Eine Forscherin untersucht inwiefern Mädchen und Jungs unterschiedlich häufig »soziale vs. eigennützige Aufgaben« von ihren Lehrerinnen und Lehrern aufgetragen bekommen. 
+Sie kommt dabei auf die folgende Kreuztabelle:
+```{r, echo = F, message = F}
+library(tidyverse)
+
+Geschl <- sample(c("Jungs", "Mädchen"), 101, replace = T)
+Aufgabe <- c(rep("eigennützlich", 11), rep("sozial", 19), rep("eigennützlich", 23), rep("sozial", 48))
+data_table <- 
+  table(Geschl, Aufgabe)*sample(1:10, 1)
+p_value <- chisq.test(data_table)$p.value %>% round(., 3)
+data_table
+```
+Eine statistische Auswertung ergibt ein Cramér's V von `r DescTools::CramerV(Geschl, Aufgabe) %>% round(., 2)` sowie einen p-Wert für die Nullhypothese $H_0$: »Jungs und Mädchen bekommen die verschiedenen Aufgaben zu gleichen Anteilen« von _p_ = `r p_value`.
+
+Welche der folgenden Interpretationen sind richtig?
+
+Answerlist
+----------
+* Cramer's V kann angewendet werden obwohl Jungs und Mädchen offensichtlich unterschiedlich häufig in der Stichprobe vorkommen.
+* Das vorliegende Cramér's V zeigt an, dass die verschiedenen Aufgaben in der Stichprobe vollständigst unabhängig vom Geschlecht vergeben werden.
+* Das vorliegende Cramér's V zeigt an, dass die verschiedenen Aufgaben in der Population zu exakt denselben Anteilen vergeben werden.
+* Das Ergebnis ist "signifikant".
+* $H_0$ ist wahr.
+* $H_0$ ist falsch.
+
+Meta-information
+================
+exname: Interpretation_V_und_Instat_01 
+extype: mchoice
+exsolution: `r stringr::str_c("100", ifelse(p_value <.05, "1", "0"),"00", collapse = "")`
+exshuffle: TRUE

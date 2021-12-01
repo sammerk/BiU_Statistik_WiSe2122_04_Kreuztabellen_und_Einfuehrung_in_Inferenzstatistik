@@ -1,0 +1,26 @@
+Question
+========
+
+Der folgende Ausschnitt einer (abgeänderten) Pressemitteilung, bezieht sich auf eine reale Studie, die untersuchte, inwiefern sich bei Erwachsenen die Korrektheit der Risikoeinschätzung von medizinischen Behandlungen durch die Lektüre von Faktenboxen steigern lässt. Dazu wurde zunächst bei einer repräsentativen Stichprobe von Erwachsenen das Wissen über Risiko-Nutzen-Verhältnisse einiger medizinischen Behandlungen abgefragt und dann elf Faktenboxen zur Verfügung gestellt. Anschließend wurde die Einschätzung des Risiko-Nutzen-Verhältnisses nochmals erfasst. _Die Analyse der Daten ergab einen Bayes Faktor von 20. Dies bedeutet: Wenn man annimmt, dass die Faktenboxen die Korrektheit der Risikoeinschätzung steigern, sind die erhobenen Daten mindestens 20fach wahrscheinlicher, als wenn man annimmt, dass die Korrektheit der Risikoeinschätzung gleichbleibt._
+
+Was denken Sie? Soll der Ausschnitt _»Die Analyse der Daten ergab einen Bayes Faktor von 20. Dies bedeutet: Wenn man annimmt, dass die Faktenboxen die Korrektheit der Risikoeinschätzung steigern, sind die erhobenen Daten mindestens 20fach wahrscheinlicher, als wenn man annimmt, dass die Korrektheit der Risikoeinschätzung gleichbleibt.«_ beschreiben ...
+
+Answerlist
+----------
+* ... wie sicher es ist, dass der Unterschied auch tatsächlich existiert oder 
+* wie groß der Unterschied ist?
+
+
+Solution
+========
+Answerlist
+----------
+* True
+* False
+
+Meta-information
+================
+exname: Unterscheidung_Inf_Effsize_02
+extype: schoice
+exsolution: 10
+exshuffle: TRUE

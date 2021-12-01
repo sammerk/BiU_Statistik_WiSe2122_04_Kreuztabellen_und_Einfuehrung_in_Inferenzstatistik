@@ -1,0 +1,53 @@
+
+```{r, Datengenese, echo = FALSE, message=FALSE}
+library(tidyverse)
+Form_erfahrenen_Mobbings <- sample(c("Flaming", "Stalking", "Grooming", "Denigration",   
+                                     "Cyberthreat", "Exclusion", "Impersonation", "Outing", "keines"), 
+                                   621, replace = T, 
+                                   prob = c(.5, .1, .05, .3,  .5, .4, .1, .2 ,.2)/
+                                     sum(c(.5, .1, .05, .3,  .5, .4, .1, .2 ,.2)))
+
+data <- tibble(Form_erfahrenen_Mobbings = Form_erfahrenen_Mobbings,
+               Geschlecht = "m")
+
+for (i in 1:nrow(data)){
+  data$Geschlecht[i] <-  ifelse(data$Form_erfahrenen_Mobbings[i] == "keines",
+                                sample(c("m", "w"), 1, prob = c(0.7, 0.3)),
+                                sample(c("m", "w"), 1, prob = c(0.45, 0.55)))
+}
+
+
+
+write.csv(data, "data2.csv", row.names = FALSE, quote = FALSE)
+
+```
+
+Question
+========
+
+> Achtung dies ist eine Frage für Interessierte. Sie geht über das Klausurniveau hinaus.
+
+Eine Schulpsychologin fragt sich, ob es geschlechtsspezifische Formen des Cyberbullyings/-mobbings an ihrer Schule gibt (um planen zu können ob sie eine Interventionsmaßnahme ko- oder monoedukativ konzipieren soll).
+Aus einer Befragung der Schüler\*innen ihrer Schule erhält sie [folgende Daten](data2.csv) anhand derer Sie Cramer's V als Assoziationsmaß der beiden nominalen Variablen `Geschlecht` und `Form_erfahrenen_Mobbings` berechnet. Welches Ergebnis wird Sie erhalten?
+
+
+
+Solution
+========
+Mit folgender Syntax erhalten Sie die richtige Lösung
+```{r}
+# Daten einlesen
+data <- read.csv("data2.csv")
+
+# Cramer's V berechnen
+library("DescTools")
+CramerV(data$Form_erfahrenen_Mobbings, data$Geschlecht)
+```
+
+
+Meta-information
+================
+extype: num
+exsolution: `r round(CramerV(data$Form_erfahrenen_Mobbings, data$Geschlecht), digits = 3)`
+exname: Cramer's V berechnen
+extol: 0.1

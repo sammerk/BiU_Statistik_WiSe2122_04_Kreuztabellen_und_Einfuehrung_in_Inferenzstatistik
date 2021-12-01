@@ -1,0 +1,50 @@
+
+```{r, Datengenese, echo = FALSE, message=FALSE}
+library(tidyverse)
+library(DescTools)
+
+zeile1 <- sample(c(3,3,6), 3, replace = F)
+
+data_table <-
+  as.table(matrix(c(zeile1, 2 * zeile1), ncol = 3, byrow = TRUE))
+
+data_table <- 
+  data_table*sample(c(1,10,1000,10000),1)
+
+colnames(data_table) <- sample(c("Stalking", "Grooming", "keines"), 3, replace = F)
+rownames(data_table) <- sample(c("Mädchen", "Jungs"), 2, replace = F)
+```
+
+Question
+========
+
+Eine Schulpsychologin fragt sich, ob es geschlechtsspezifische Formen des Cyberbullyings/-mobbings an ihrer Schule gibt (um planen zu können ob sie eine Interventionsmaßnahme ko- oder monoedukativ konzipieren soll).
+Aus einer Befragung der Schüler\*innen ihrer Schule erhält sie folgende Daten:
+
+```{r, echo = F}
+data_table
+```
+
+Anhand dieser Daten berechnet Sie Cramer's V als Assoziationsmaß der beiden nominalen Variablen `Geschlecht` und `Form_erfahrenen_Mobbings` Welches Ergebnis wird Sie erhalten?
+
+Answerlist
+----------
+* -1
+* 5.2
+* 1
+* -3.1
+* `r round(CramerV(data_table), digits = 2)`
+* 0.25
+* 0.62
+* 0.81
+
+Solution
+========
+Carmér's V hat einen Wertebereich von 0 bis 1. 0 hieße keinerlei Zusammenhang, 1 hieße perfekter Zusammenhang. In der Tabelle sieht man schnell dass die eine Zeile einfach nur das Doppelte der anderen Zeile ist. Also muss es `r round(CramerV(data_table), digits = 2)` sein. 
+
+
+Meta-information
+================
+extype: schoice
+exsolution: 00001000
+exname: Cramer's V berechnen geschlossen

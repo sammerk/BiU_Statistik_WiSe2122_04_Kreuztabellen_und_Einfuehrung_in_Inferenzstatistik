@@ -1,0 +1,26 @@
+Question
+========
+
+Der folgende Ausschnitt einer (abgeänderten) Pressemitteilung, bezieht sich auf eine reale Studie, die untersuchte, inwiefern sich bei gehörlosen und schwerhörigen Kindern das Verständnis von Kinder-TV-Sendungen durch modifizierte Untertitel steigern lässt. Dazu wurde bei einer repräsentativen Stichprobe von gehörlosen und schwerhörigen Kindern mit einem schriftlichen Test zunächst das Verständnis konventionell untertitelter Sendungen erfasst. Danach wurde das Verständnis von Sendungen, die gekürzte Untertitel mit längeren Standzeiten aufwiesen erfasst. _Die erhobenen Daten sind unter der Annahme gleicher Verständlichkeit der Untertitel sehr unwahrscheinlich._
+
+Was denken Sie? Soll der Ausschnitt _»Die erhobenen Daten sind unter der Annahme gleicher Verständlichkeit der Untertitel sehr unwahrscheinlich.«_ beschreiben ...
+
+Answerlist
+----------
+* ... wie sicher es ist, dass der Unterschied auch tatsächlich existiert oder 
+* wie groß der Unterschied ist?
+
+
+Solution
+========
+Answerlist
+----------
+* True
+* False
+
+Meta-information
+================
+exname: Unterscheidung_Inf_Effsize_03
+extype: schoice
+exsolution: 10
+exshuffle: TRUE
